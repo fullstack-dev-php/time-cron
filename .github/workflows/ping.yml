@@ -1,0 +1,15 @@
+name: Ping Render Website
+
+on:
+  schedule:
+    - cron: "*/10 * * * *"  # Ping mỗi 5 phút
+  workflow_dispatch:       # Cho phép chạy thủ công
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Gửi GET request đến website Laravel trên Render
+        run: |
+          curl -s https://oyasumi-demo.onrender.com
+          curl -s https://mintoku-demo.onrender.com
